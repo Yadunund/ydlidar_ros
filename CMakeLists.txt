@@ -24,23 +24,14 @@ FILE(GLOB SDK_SRC
   "${SDK_PATH}/src/*.c"
 )
 
-file(GLOB_RECURSE srcs "src/*.c")
-
-#include_directories(
-#  ${catkin_INCLUDE_DIRS}
-#  ${PROJECT_SOURCE_DIR}/src
-#  ${PROJECT_SOURCE_DIR}/sdk/include
-#  ${PROJECT_SOURCE_DIR}/sdk/src
-#)
-
-add_executable(ydlidar_node src/ydlidar_node.cpp ${srcs})
-# add_executable(ydlidar_node src/ydlidar_node.cpp  ${SDK_SRC})
-add_executable(ydlidar_client src/ydlidar_client.cpp)
-
-target_include_directories(ydlidar_node PUBLIC
-    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
-    $<INSTALL_INTERFACE:include>
+include_directories(
+  ${PROJECT_SOURCE_DIR}/src
+  ${PROJECT_SOURCE_DIR}/sdk/include
+  ${PROJECT_SOURCE_DIR}/sdk/src
 )
+
+add_executable(ydlidar_node src/ydlidar_node.cpp  ${SDK_SRC})
+add_executable(ydlidar_client src/ydlidar_client.cpp)
 
 ament_target_dependencies(ydlidar_node
    rclcpp
@@ -57,7 +48,6 @@ install(TARGETS ydlidar_node ydlidar_client
   LIBRARY DESTINATION lib/${PROJECT_NAME}
   ARCHIVE DESTINATION lib/${PROJECT_NAME}
 )
-
 
 install(DIRECTORY launch startup sdk
   DESTINATION share/${PROJECT_NAME}
