@@ -20,7 +20,11 @@
 #include <limits.h>
 #include <stdlib.h>
 #include <signal.h>
+#include <sys/sysmacros.h>
+
 #ifdef LFS
+
+
 /*----------------------------------------------------------
  lfs_lock
    accept:      The name of the device to try to lock
