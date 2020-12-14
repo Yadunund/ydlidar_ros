@@ -33,7 +33,7 @@ public:
   : Node(node_name)
   {
     // Declare node parameters
-    _port = this->declare_parameter("port", "/dev/ydlidar");
+    _port = this->declare_parameter("port", "/dev/ttyUSB0");
     _frame_id = this->declare_parameter("frame_id", "laser_frame");
     _resolution_fixed = this->declare_parameter("resolution_fixed", true);
     _auto_reconnect = this->declare_parameter("auto_reconnect", true);
