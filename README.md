@@ -1,40 +1,27 @@
-YDLIDAR ROS PACKAGE V1.4.1
+YDLIDAR ROS 2 PACKAGE
 =====================================================================
 
-ROS node and test application for YDLIDAR
+ROS 2 node and test application for YDLIDAR
 
 Visit EAI Website for more details about YDLIDAR.
 
-How to build YDLIDAR ros package
+BUILD
 =====================================================================
-    1) Clone this project to your catkin's workspace src folder
-    2) Running catkin_make to build ydlidar_node and ydlidar_client
-    3) Create the name "/dev/ydlidar" for YDLIDAR
-    --$ roscd ydlidar/startup
-    --$ sudo chmod 777 ./*
-    --$ sudo sh initenv.sh
+```
+git clone https://github.com/Yadunund/ydlidar_ros.git -b X2L-foxy-devel
+source /opt/ros/foxy/setup.bash
+colcon build
+```
 
-How to run YDLIDAR ros package
+RUN
 =====================================================================
-There're two ways to run YDLIDAR ros package
-
-1. Run YDLIDAR node and view in the rviz
-------------------------------------------------------------
-roslaunch ydlidar lidar_view.launch
-
-You should see YDLIDAR's scan result in the rviz.
-
-2. Run YDLIDAR node and view using test application
-------------------------------------------------------------
-roslaunch ydlidar lidar.launch
-
-rosrun ydlidar ydlidar_client
-
-You should see YDLIDAR's scan result in the console
+```
+ros2 launch ydlidar lidar.launch.xml
+```
 
 
-Parameters
-------------------------------------------------------------
+PARAMETERS
+=====================================================================
 port (string, default: /dev/ydlidar)
 
     serial port name used in your system.
@@ -84,8 +71,3 @@ max_abnormal_check_count (int, default: 2)
     the LIDAR scanning the maximum number of abnormal checks.
 
    
-      
-   Contact EAI
----------------
-
-If you have any extra questions, please feel free to [contact us](http://www.ydlidar.cn/cn/contact)
