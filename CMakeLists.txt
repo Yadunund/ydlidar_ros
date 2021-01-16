@@ -49,7 +49,7 @@ install(TARGETS ydlidar_node ydlidar_client
   ARCHIVE DESTINATION lib/${PROJECT_NAME}
 )
 
-install(DIRECTORY launch startup sdk
+install(DIRECTORY launch/ startup/ sdk/
   DESTINATION share/${PROJECT_NAME}
 )
 
