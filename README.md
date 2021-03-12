@@ -1,6 +1,10 @@
 ![YDLIDAR](sdk/image/YDLidar.jpg  "YDLIDAR")
 # YDLIDAR ROS PACKAGE(V1.4.6)
 
+#############################################
+## FOR ROS 2 DRIVER CHECKOUT `X2L-foxy-devel`
+#############################################
+
 ## Dataset 
 |LIDAR      | Model  |  Baudrate |  SampleRate(K) | Range(m)  		   |  Frequency(HZ) | Intenstiy(bit) | SingleChannel | voltage(V)|
 | :-------- |:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|
